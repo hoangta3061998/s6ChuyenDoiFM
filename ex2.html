@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Amount <input type="text" id="Amount">
+From  <select id="from">
+    <option value="Feet">Feet</option>
+    <option value="Metter">Metter</option>
+</select>
+To  <select id="to">
+    <option value="Metter">Metter</option>
+    <option value="Feet">Feet</option>
+</select>
+<input type="button" value="Submit" onclick="submit()">
+<p id="1"></p>
+<script>
+    function submit() {
+        let amount = parseFloat(document.getElementById("Amount").value);
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let result;
+        if ((from === "Feet") && (to === "Metter")) {
+            result = amount * 0.035;
+        } else {
+            result = amount * 3.279;
+        }
+        document.getElementById("1").innerHTML = result;
+    }
+
+</script>
+</body>
+</html>
